@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+		<!-- Begin page -->
+		<header class="am-topbar am-topbar-fixed-top">
+			<div class="am-topbar-left am-hide-sm-only">
+                <a href="index.html" class="logo"><span>wechat<span>Bill</span></span><i class="zmdi zmdi-layers"></i></a>
+            </div>
+
+			<div class="contain">
+				<ul class="am-nav am-navbar-nav am-navbar-left">
+
+					<li><h4 class="page-title">折线图</h4></li>
+				</ul>
+
+				<ul class="am-nav am-navbar-nav am-navbar-right">
+					<li class="inform"><i class="am-icon-bell-o" aria-hidden="true"></i></li>
+					<li class="hidden-xs am-hide-sm-only">
+                        <form role="search" class="app-search">
+                            <input type="text" placeholder="Search..." class="form-control">
+                            <a href=""><img src="../static/img/search.png"></a>
+                        </form>
+                    </li>
+				</ul>
+			</div>
+		</header>
+		<!-- end page -->
+		
+
+		<!-- ============================================================== -->
+		<!-- Start right Content here -->
+		<div class="content-page">
+			<!-- Start content -->
+			<div class="content">
+				<div class="am-g">
+					<div class="am-u-md-6" >
+						<!-- 折线图堆叠 -->
+						<div class="card-box">
+							<div  id="Stack" style="width: 100%;height: 250px;"></div>
+						</div>
+					</div>
+
+					<div class="am-u-md-6">
+						<!-- 堆叠区域图  -->
+						<div class="card-box">
+							<div  id="area" style="width: 100%;height: 250px;"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="am-g">
+					<div class="am-u-md-6">
+						<!-- Step Line -->
+						<div class="card-box">
+							<div  id="step" style="width: 100%;height: 250px;"></div>
+						</div>
+					</div>
+
+					<div class="am-u-md-6">
+						<!-- 大数据面积图  -->
+						<div class="card-box">
+							<div  id="shuju" style="width: 100%;height: 250px;"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="am-g">
+					<div class="am-u-md-12">
+						<!-- 动态数据+时间坐标轴 -->
+						<div class="card-box">
+							<div  id="trends" style="width: 100%;height: 300px;"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+{% endblock %}

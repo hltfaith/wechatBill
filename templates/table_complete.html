@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% block content %}
+
+        <!-- Begin page -->
+		<header class="am-topbar am-topbar-fixed-top">
+			<div class="am-topbar-left am-hide-sm-only">
+                <a href="index.html" class="logo"><span>wechat<span>Bill</span></span><i class="zmdi zmdi-layers"></i></a>
+            </div>
+
+			<div class="contain">
+				<ul class="am-nav am-navbar-nav am-navbar-left">
+
+					<li><h4 class="page-title">支出明细</h4></li>
+				</ul>
+
+				<ul class="am-nav am-navbar-nav am-navbar-right">
+					<li class="inform"><i class="am-icon-bell-o" aria-hidden="true"></i></li>
+					<li class="hidden-xs am-hide-sm-only">
+                        <form role="search" class="app-search">
+                            <input type="text" placeholder="Search..." class="form-control">
+                            <a href=""><img src="../static/img/search.png"></a>
+                        </form>
+                    </li>
+				</ul>
+			</div>
+		</header>
+        <!-- end page -->
+
+
+	    <!--	<div class="am-g">-->
+		<!-- ============================================================== -->
+		<!-- Start right Content here -->
+		<div class="content-page">
+			<!-- Start content -->
+			<div class="content">
+				<div class="card-box">
+					<!-- Row start -->
+					<div class="am-g">
+						<div class="am-u-sm-12 am-u-md-6">
+				          <div class="am-btn-toolbar">
+				            <!--<div class="am-btn-group am-btn-group-xs">
+				              <button type="button" class="am-btn am-btn-default"><span class="am-icon-plus"></span> 新增</button>
+				              <button type="button" class="am-btn am-btn-default"><span class="am-icon-save"></span> 保存</button>
+				              <button type="button" class="am-btn am-btn-default"><span class="am-icon-archive"></span> 审核</button>
+				              <button type="button" class="am-btn am-btn-default"><span class="am-icon-trash-o"></span> 删除</button>
+				            </div>-->
+				          </div>
+				        </div>	
+				        
+						<div class="am-u-sm-12 am-u-md-3">
+				          <div class="am-input-group am-input-group-sm">
+				            <input type="text" class="am-form-field">
+				          <span class="am-input-group-btn">
+				            <button class="am-btn am-btn-default" type="button">搜索</button>
+				          </span>
+				          </div>
+				        </div>
+				      </div>
+					  <!-- Row end -->
+					  
+					  <!-- Row start -->
+					  	<div class="am-g">
+        <div class="am-u-sm-12">
+          <form class="am-form">
+            <table class="am-table am-table-striped am-table-hover table-main">
+              <thead>
+              <tr>
+                <th class="table-id">ID</th><th class="table-title">消费商品</th><th class="table-type">交易类型</th><th class="table-author am-hide-sm-only">金额</th><th class="table-date am-hide-sm-only">支付日期</th><th class="table-set">交易单号</th>
+              </tr>
+              </thead>
+              <tbody>
+
+                {% for foo in index_list %}
+
+                        <tr>
+                              <td>{{ data[foo][0] }}</td>
+                              <td><a href="#">{{ data[foo][1] }}</a></td>
+                              <td>{{ data[foo][2] }}</td>
+                              <td class="am-hide-sm-only">{{ data[foo][3] }}</td>
+                              <td class="am-hide-sm-only">{{ data[foo][4] }}</td>
+                              <td class="am-hide-sm-only">{{ data[foo][5] }}</td>
+                        </tr>
+
+                {% endfor %}
+
+
+             <!--<tr>
+                <td><input type="checkbox" /></td>
+                <td>1</td>
+                <td><a href="#">森森铁板炒饭外卖订单</a></td>
+                <td>商户消费</td>
+                <td class="am-hide-sm-only">39.76</td>
+                <td class="am-hide-sm-only">2019-03-10 19:13:00</td>
+                <td class="am-hide-sm-only">4200000282201903105897314399</td>
+             </tr>-->
+
+
+              </tbody>
+            </table>
+            <div class="am-cf">
+              共 {{ zcmx_jl[0] }} 条记录
+
+                <!-- 分页查询 -->
+
+              <div class="am-fr">
+                <ul class="am-pagination">
+                  <li class="am-disabled"><a href="#">«</a></li>
+                  <li class="am-active"></li><a href="#">{{ html|safe }}</a>
+                  <li><a href="#">»</a></li>
+                </ul>
+              </div>
+
+
+
+              <!--<div class="am-fr">
+                <ul class="am-pagination">
+                  <li class="am-disabled"><a href="#">«</a></li>
+                  <li class="am-active"><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">5</a></li>
+                  <li><a href="#">»</a></li>
+                </ul>
+              </div>-->
+
+
+            </div>
+            <hr />
+
+          </form>
+        </div>
+
+      </div>
+					  <!-- Row end -->
+					  
+					</div>
+				
+				
+				
+				
+				</div>
+			
+
+			</div>
+		</div>
+
+
+
+
+
+
+{% endblock %}

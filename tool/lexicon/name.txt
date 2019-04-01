@@ -1,0 +1,7 @@
+餐饮酒店		cyjdNAME
+餐饮			cycyNAME
+?????			kdgsNAME
+品牌			ppNAME
+全国省市区县	qgssqxNAME
+?????			spppNAME
+垃圾食品        ljspNAME

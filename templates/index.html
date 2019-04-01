@@ -1,0 +1,281 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+    <!-- Begin page -->
+		<header class="am-topbar am-topbar-fixed-top">
+			<div class="am-topbar-left am-hide-sm-only">
+                <a href="index.html" class="logo"><span>wechat<span>Bill</span></span><i class="zmdi zmdi-layers"></i></a>
+            </div>
+
+			<div class="contain">
+				<ul class="am-nav am-navbar-nav am-navbar-left">
+
+					<li><h4 class="page-title">支出预览</h4></li>
+				</ul>
+
+				<ul class="am-nav am-navbar-nav am-navbar-right">
+					<li class="inform"><i class="am-icon-bell-o" aria-hidden="true"></i></li>
+					<li class="hidden-xs am-hide-sm-only">
+                        <form role="search" class="app-search">
+                            <input type="text" placeholder="Search..." class="form-control">
+                            <a href=""><img src="../static/img/search.png"></a>
+                        </form>
+                    </li>
+				</ul>
+			</div>
+		</header>
+    <!-- end page -->
+
+	<!--	<div class="am-g">-->
+		<!-- ============================================================== -->
+		<!-- Start right Content here -->
+
+
+		<div class="content-page">
+			<!-- Start content -->
+			<div class="content">
+				<div class="am-g">
+					<!-- Row start -->
+						<div class="am-u-md-3">
+							<div class="card-box">
+								<h4 class="header-title m-t-0 m-b-30">总支出</h4>
+								<div class="widget-chart-1 am-cf">
+                                    <div id="widget-chart-box-1" style="height: 110px;width: 110px;float: left;">
+                                    </div>
+
+                                    <div class="widget-detail-1" style="float: right;">
+                                        <h2 class="p-t-10 m-b-0"> {{ zcyl_zzc }} </h2>
+                                        <p class="text-muted">总支出金额</p>
+                                    </div>
+                                </div>
+							</div>
+						</div>
+						<!-- col end -->
+						<div class="am-u-md-3">
+							<div class="card-box">
+								<h4 class="header-title m-t-0 m-b-30">单笔最高支出</h4>
+								<div class="widget-box-2">
+                                    <div class="widget-detail-2">
+                                        <span class="badge  pull-left m-t-20  am-round" style="color: #fff; background: #0e90d2;">{{ zcyl_dbzgzcbfb }} <i class="zmdi zmdi-trending-up"></i> </span>
+                                        <h2 class="m-b-0"> {{ zcyl_dbzgzc }} </h2>
+
+                                    </div>
+                                    <div class="am-progress am-progress-xs am-margin-bottom-0">
+									    <div class="am-progress-bar" style="width: {{ zcyl_dbzgzcbfb }}"></div>
+									</div>
+                                </div>
+							</div>
+						</div>
+						<!-- col end -->
+						<div class="am-u-md-3">
+							<div class="card-box">
+								<h4 class="header-title m-t-0 m-b-30">总收入</h4>
+								<div class="widget-chart-1 am-cf">
+                                    <div id="widget-chart-box-2" style="height: 110px;width: 110px;float: left;">
+                                    </div>
+
+                                    <div class="widget-detail-1" style="float: right;">
+                                        <h2 class="p-t-10 m-b-0"> {{ zcyl_zsr }} </h2>
+                                        <p class="text-muted">总收入金额</p>
+                                    </div>
+                                </div>
+							</div>
+						</div>
+						<!-- col end -->
+						<div class="am-u-md-3">
+							<div class="card-box">
+								<h4 class="header-title m-t-0 m-b-30">单笔最高收入</h4>
+								<div class="widget-box-2">
+                                    <div class="widget-detail-2">
+                                        <span class="badge  pull-left m-t-20  am-round progress-bar-pink" style="color: #fff;">{{ zcyl_dbzgsrbfb }} <i class="zmdi zmdi-trending-up"></i> </span>
+                                        <h2 class="m-b-0"> {{ zcyl_dbzgsr }} </h2>
+
+                                    </div>
+                                    <div class="am-progress am-progress-xs am-margin-bottom-0" style="background: rgba(255, 138, 204, 0.2);">
+									    <div class="am-progress-bar progress-bar-pink" style="width: {{ zcyl_dbzgsrbfb }}"></div>
+									</div>
+                                </div>
+							</div>
+						</div>
+					<!-- Row end -->
+				</div>
+				
+				<div class="am-g">
+					<!-- Row start -->
+					<div class="am-u-md-4">
+						<div class="card-box">
+							<h4 class="header-title m-t-0">消费分类</h4>
+							<div id="index-pie-1" style="height: 345px;height: 300px;"></div>
+						</div>
+					</div>
+					
+					<div class="am-u-md-4">
+						<div class="card-box">
+							<h4 class="header-title m-t-0">近一周消费</h4>
+							<div id="index-bar-1" style="height: 345px;height: 300px;"></div>
+						</div>
+					</div>
+					
+					<div class="am-u-md-4">
+						<div class="card-box">
+							<h4 class="header-title m-t-0">两周高低消费对比</h4>
+							<div id="index-line-1" style="height: 345px;height: 300px;"></div>
+						</div>
+					</div>
+					<!-- Row end -->
+				</div>
+				
+				<div class="am-g">
+
+					</div>
+					
+					
+					<!-- Row start -->
+					<div class="am-g">
+						<!-- col start -->
+						<div class="am-u-md-4">
+							<div class="card-box">
+								<h4 class="header-title m-t-0 m-b-30">消费活跃区域</h4>
+								<div class="inbox-widget nicescroll" style="height: 315px; overflow: hidden; outline: none;" tabindex="5000">
+
+
+                                    <!--<a href="#">
+                                        <div class="inbox-item">
+                                            <div class="inbox-item-img"><img src="../static/img/city.png" class="img-circle" alt=""></div>
+                                            <p class="inbox-item-author">北京</p>
+                                            <p class="inbox-item-text">WECOME TO CITY</p>
+                                            <p class="inbox-item-date">13:40 PM</p>
+                                        </div>
+                                    </a>-->
+
+
+                                    {% for i in xfcity %}
+
+                                        <a href="#">
+                                            <div class="inbox-item">
+                                                <div class="inbox-item-img"><img src="../static/img/city.png" class="img-circle" alt=""></div>
+                                                <p class="inbox-item-author">{{ i }}</p>
+                                                <p class="inbox-item-text">WELCOME TO THIS CITY</p>
+                                                <p class="inbox-item-date">12:00 PM</p>
+                                            </div>
+                                         </a>
+
+                                    {% endfor %}
+
+                                </div>
+							</div>
+						</div>
+						<!-- col end -->
+						
+						<!-- col start -->
+						<div class="am-u-md-8">
+							<div class="card-box">
+								<h4 class="header-title m-t-0 m-b-30">TOP10 消费清单</h4>
+								<div class="am-scrollable-horizontal am-text-ms" style="font-family: '微软雅黑';">
+                                        <table class="am-table   am-text-nowrap">
+                                            <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>商品名称</th>
+                                                <th>商品金额</th>
+                                                <th>交易时间</th>
+                                                <th>交易状态</th>
+                                                <th>支付方式</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+
+
+                                               <!-- <tr>
+                                                    <td>1</td>
+                                                    <td>Adminto Admin v1</td>
+                                                    <td>01/01/2016</td>
+                                                    <td>26/04/2016</td>
+                                                    <td><span class="label label-success">已发布</span></td>
+                                                    <td>Coderthemes</td>
+                                                </tr> -->
+
+                                                {% for i in zcyl_xftop10 %}
+
+                                                    <tr>
+                                                        <td>{{ i[0] }}</td>
+                                                        <td>{{ i[1] }}</td>
+                                                        <td>{{ i[2] }}</td>
+                                                        <td>{{ i[3] }}</td>
+                                                        <td><span class="label label-success">{{ i[4] }}</span></td>
+                                                        <td>{{ i[5] }}</td>
+                                                    </tr>
+
+                                                {% endfor %}
+
+
+                                                <!--<tr>
+                                                    <td>2</td>
+                                                    <td>Adminto Frontend v1</td>
+                                                    <td>01/01/2016</td>
+                                                    <td>26/04/2016</td>
+                                                    <td><span class="label label-success">已发布</span></td>
+                                                    <td>Adminto admin</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>Adminto Admin v1.1</td>
+                                                    <td>01/05/2016</td>
+                                                    <td>10/05/2016</td>
+                                                    <td><span class="label label-pink">未开展</span></td>
+                                                    <td>Coderthemes</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>Adminto Frontend v1.1</td>
+                                                    <td>01/01/2016</td>
+                                                    <td>31/05/2016</td>
+                                                    <td><span class="label label-purple">进行中</span>
+                                                    </td>
+                                                    <td>Adminto admin</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>Adminto Admin v1.3</td>
+                                                    <td>01/01/2016</td>
+                                                    <td>31/05/2016</td>
+                                                    <td><span class="label label-warning">即将开始</span></td>
+                                                    <td>Coderthemes</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>Adminto Admin v1.3</td>
+                                                    <td>01/01/2016</td>
+                                                    <td>31/05/2016</td>
+                                                    <td><span class="label label-primary">即将开始</span></td>
+                                                    <td>Adminto admin</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>7</td>
+                                                    <td>Adminto Admin v1.3</td>
+                                                    <td>01/01/2016</td>
+                                                    <td>31/05/2016</td>
+                                                    <td><span class="label label-primary">即将开始</span></td>
+                                                    <td>Adminto admin</td>
+                                                </tr>-->
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+							</div>
+						</div>
+						<!-- col end -->
+					</div>
+					<!--&lt;!&ndash; Row end &ndash;&gt;<a href="http://www.aspku.com/" target="_blank">源码之家</a>-->
+					
+				
+			
+				
+			</div>
+		</div>
+
+
+{% endblock %}
+
+
