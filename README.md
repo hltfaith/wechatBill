@@ -57,7 +57,20 @@
   
 **废话不多说直接上图**
 
-![](images/login_html.png)
+![](images/login_html.png)  
+  
+![](images/upload_html.png)
+  
+![](images/index_html.png)
+  
+![](images/bzt_html.png)
+  
+![](images/zcmx_html.png)
+  
+![](images/bill1_html.png)
+  
+![](images/bill2_html.png)
+  
 ![](images/zhangdan.png)
 
 
