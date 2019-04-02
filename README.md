@@ -69,7 +69,7 @@
   
 ![](images/bill1_html.png)
   
-![](images/bill2_html.png)
+![](images/bill2.png)
   
 ![](images/zhangdan.png)
 
