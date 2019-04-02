@@ -54,6 +54,6 @@
   
     (小程序开发、数据分析、爬虫数据、网站开发、自动化运维开发、脚本制作、应用程序开发)
   
-![](../images/zhangdan.png)
+![](images/zhangdan.png)
 
 
